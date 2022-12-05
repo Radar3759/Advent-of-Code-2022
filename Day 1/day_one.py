@@ -8,7 +8,7 @@ import os #more language agnostic than "\n\n" per stackoverflow
 
 #use 'with' to auto close the file
 #open the file called 'realdata.in' to something called 'f'
-with open('realdata.in') as f:
+with open('day_one.in') as f:
     #take the data, assign a var 'data' = read the file, take out the spaces and commas, ett. split it where there is an empty line
     data = f.read().strip().split(os.linesep + os.linesep)
 
