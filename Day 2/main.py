@@ -37,3 +37,37 @@ for round in rounds:
             my_score += 6
     total_score += my_score #order is IMPORTANT here
 print(f"The total score for you: {total_score}")
+
+#PART 2
+total_strategy_score = 0 #figure out why this made it work
+for round in rounds:
+    my_score = 0
+    opp_game = round[0] #don't forget this step next time
+    my_game = round[2]   
+    
+    if my_game == 'X': #need to lose for 0+ points X is usually worth 1
+        #not adding to the score because it's a loss 
+        if opp_game == 'A':
+            my_score += 3
+        elif opp_game == 'B':
+            my_score += 1
+        elif opp_game == 'C':
+            my_score += 2
+    elif my_game == 'Y': #create a draw for +3 points
+        my_score += 3
+        if opp_game == 'A':
+            my_score += 1
+        elif opp_game == 'B':
+            my_score += 2
+        elif opp_game == 'C':
+            my_score += 3
+    elif my_game == 'Z': #create a win for +6 points
+        my_score += 6
+        if opp_game == 'A':
+            my_score += 2
+        elif opp_game == 'B':
+            my_score += 3
+        elif opp_game == 'C':
+            my_score += 1
+    total_strategy_score += my_score #order is IMPORTANT here
+    print(f"The total strategy score for you: {total_strategy_score}")
